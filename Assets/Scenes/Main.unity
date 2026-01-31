@@ -899,33 +899,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Clients:
-  - PrimaryTrait: 1
-    PrimaryTraitPreferredValue: 2
-    SecondaryTrait: 0
-    SecondaryTraitPreferredValue: 1
-    TertiaryTrait: 2
-    TertiaryTraitPreferredValue: 0
-  - PrimaryTrait: 0
-    PrimaryTraitPreferredValue: 2
-    SecondaryTrait: 2
-    SecondaryTraitPreferredValue: 2
-    TertiaryTrait: 1
-    TertiaryTraitPreferredValue: 1
-  - PrimaryTrait: 2
-    PrimaryTraitPreferredValue: 1
-    SecondaryTrait: 1
-    SecondaryTraitPreferredValue: 0
-    TertiaryTrait: 0
-    TertiaryTraitPreferredValue: 0
+  - PrimaryPerTrait: 1
+    PrimaryPerTraitPreferredValue: 2
+    SecondaryPerTrait: 0
+    SecondaryPerTraitPreferredValue: 1
+    TertiaryPerTrait: 2
+    TertiaryPerTraitPreferredValue: 0
+    PrimaryPhysTrait: 1
+    PrimaryPhysTraitPreferredValue: 2
+    SecondaryPhysTrait: 2
+    SecondaryPhysTraitPreferredValue: 0
+    TertiaryPhysTrait: 0
+    TertiaryPhysTraitPreferredValue: 0
+  - PrimaryPerTrait: 0
+    PrimaryPerTraitPreferredValue: 2
+    SecondaryPerTrait: 2
+    SecondaryPerTraitPreferredValue: 2
+    TertiaryPerTrait: 1
+    TertiaryPerTraitPreferredValue: 1
+    PrimaryPhysTrait: 2
+    PrimaryPhysTraitPreferredValue: 1
+    SecondaryPhysTrait: 0
+    SecondaryPhysTraitPreferredValue: 1
+    TertiaryPhysTrait: 1
+    TertiaryPhysTraitPreferredValue: 0
+  - PrimaryPerTrait: 2
+    PrimaryPerTraitPreferredValue: 1
+    SecondaryPerTrait: 1
+    SecondaryPerTraitPreferredValue: 0
+    TertiaryPerTrait: 0
+    TertiaryPerTraitPreferredValue: 0
+    PrimaryPhysTrait: 0
+    PrimaryPhysTraitPreferredValue: 2
+    SecondaryPhysTrait: 1
+    SecondaryPhysTraitPreferredValue: 1
+    TertiaryPhysTrait: 2
+    TertiaryPhysTraitPreferredValue: 2
   Soundboard: {fileID: 302573737}
-  CurrentClient:
-    PrimaryTrait: 0
-    PrimaryTraitPreferredValue: 0
-    SecondaryTrait: 0
-    SecondaryTraitPreferredValue: 0
-    TertiaryTrait: 0
-    TertiaryTraitPreferredValue: 0
-  DEBUG_CurrentClient: 0
+  DEBUG_CurrentClient: -1
+  DEBUG_PrimaryPhysicalTraitSetting: -1
 --- !u!4 &1883642003
 Transform:
   m_ObjectHideFlags: 0

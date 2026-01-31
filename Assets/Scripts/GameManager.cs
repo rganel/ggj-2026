@@ -10,25 +10,49 @@ public class GameManager : MonoBehaviour
         Demeanor
     };
 
+    public enum PHYSICAL_TRAIT {
+        Appearance,
+        Height,
+        Style
+    };
+
     [System.Serializable]
     private class Client {
         [SerializeField]
-        public PERSONALITY_TRAIT PrimaryTrait;
+        public PERSONALITY_TRAIT PrimaryPerTrait;
 
         [SerializeField]
-        public int PrimaryTraitPreferredValue;
+        public int PrimaryPerTraitPreferredValue;
 
         [SerializeField]
-        public PERSONALITY_TRAIT SecondaryTrait;
+        public PERSONALITY_TRAIT SecondaryPerTrait;
 
         [SerializeField]
-        public int SecondaryTraitPreferredValue;
+        public int SecondaryPerTraitPreferredValue;
 
         [SerializeField]
-        public PERSONALITY_TRAIT TertiaryTrait;
+        public PERSONALITY_TRAIT TertiaryPerTrait;
 
         [SerializeField]
-        public int TertiaryTraitPreferredValue;
+        public int TertiaryPerTraitPreferredValue;
+
+        [SerializeField]
+        public PHYSICAL_TRAIT PrimaryPhysTrait;
+
+        [SerializeField]
+        public int PrimaryPhysTraitPreferredValue;
+
+        [SerializeField]
+        public PHYSICAL_TRAIT SecondaryPhysTrait;
+
+        [SerializeField]
+        public int SecondaryPhysTraitPreferredValue;
+
+        [SerializeField]
+        public PHYSICAL_TRAIT TertiaryPhysTrait;
+
+        [SerializeField]
+        public int TertiaryPhysTraitPreferredValue;
     }
 
     [SerializeField]
@@ -37,11 +61,14 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Soundboard Soundboard;
 
-    [SerializeField]
+//    [SerializeField]
     private Client CurrentClient;
 
     [SerializeField]
     private int DEBUG_CurrentClient = -1;
+
+    [SerializeField]
+    private int DEBUG_PrimaryPhysicalTraitSetting = -1;
 
     public void FixedUpdate() {
         if (DEBUG_CurrentClient >= 0) {
@@ -52,7 +79,10 @@ public class GameManager : MonoBehaviour
     public bool GetClientSuccess() {
         Dictionary<GameManager.PERSONALITY_TRAIT, int> SoundboardSettings = Soundboard.GetSettings();
 
-        return SoundboardSettings[CurrentClient.PrimaryTrait] == CurrentClient.PrimaryTraitPreferredValue;
+        bool PersonalitySuccess = SoundboardSettings[CurrentClient.PrimaryPerTrait] == CurrentClient.PrimaryPerTraitPreferredValue;
+        bool PhysicalSuccess = DEBUG_PrimaryPhysicalTraitSetting == CurrentClient.PrimaryPhysTraitPreferredValue;
+
+        return PersonalitySuccess && PhysicalSuccess;
     }
 
     public void DEBUG_CheckSubmission() {

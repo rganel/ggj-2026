@@ -38,6 +38,8 @@ public class RobotAvatarManager : MonoBehaviour
     [SerializeField]
     private Image RobotImage;
 
+    private int CurrentBody;
+    private int CurrentStyle;
     private int CurrentSprite;
 
     public Dictionary<GameManager.PHYSICAL_TRAIT, int> GetSettings() {
@@ -49,25 +51,59 @@ public class RobotAvatarManager : MonoBehaviour
         };
     }
 
-    public void SetNextSprite() {
-        ++CurrentSprite;
-        WrapCurrentSprite();
+    public void NextBodyType() {
+        CurrentBody++;
+        if (CurrentBody > 2) {
+            CurrentBody = 0;
+        }
+
+        CurrentSprite = CurrentStyle + (CurrentBody * 3);
 
         RobotImage.sprite = Sprites[CurrentSprite];
     }
 
-    public void SetLastSprite() {
-            --CurrentSprite;
-            WrapCurrentSprite();
-
-            RobotImage.sprite = Sprites[CurrentSprite];
+    public void NextStyle() {
+        CurrentStyle++;
+        if (CurrentStyle > 2) {
+            CurrentStyle = 0;
         }
 
-    private void WrapCurrentSprite() {
-        if (CurrentSprite < 0) {
-            CurrentSprite = Sprites.Length + CurrentSprite;
+        CurrentSprite = CurrentStyle + (CurrentBody * 3);
+
+        RobotImage.sprite = Sprites[CurrentSprite];
+    }
+
+    public void NextHeight() {
+        // TODO
+
+        RobotImage.sprite = Sprites[CurrentSprite];
+    }
+
+    public void LastBodyType() {
+        CurrentBody--;
+        if (CurrentBody < 0) {
+            CurrentBody = 2;
         }
 
-        CurrentSprite = (CurrentSprite % Sprites.Length);
+        CurrentSprite = CurrentStyle + (CurrentBody * 3);
+
+        RobotImage.sprite = Sprites[CurrentSprite];
+    }
+
+    public void LastStyle() {
+        CurrentStyle--;
+        if (CurrentStyle < 0) {
+            CurrentStyle = 2;
+        }
+
+        CurrentSprite = CurrentStyle + (CurrentBody * 3);
+
+        RobotImage.sprite = Sprites[CurrentSprite];
+    }
+
+    public void LastHeight() {
+        // TODO
+
+        RobotImage.sprite = Sprites[CurrentSprite];
     }
 }

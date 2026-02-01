@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PixelCrushers.DialogueSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -64,35 +65,71 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private SoundboardManager SoundboardManager;
 
-//    [SerializeField]
+    [SerializeField]
+    private RobotAvatarManager RobotAvatarManager;
+
+    [SerializeField]
+    private GameObject SubmitButton;
+
     private Client CurrentClient;
 
     [SerializeField]
-    private int DEBUG_CurrentClient = -1;
+    private int CurrentClientIndex = -1;
 
-    [SerializeField]
-    private int DEBUG_PrimaryPhysicalTraitSetting = -1;
+    public void Awake() {
+        NextClient(null);
+    }
 
-    public void FixedUpdate() {
-        if (DEBUG_CurrentClient >= 0) {
-            CurrentClient = Clients[DEBUG_CurrentClient];
+    public void CompleteConfig() {
+        SubmitButton.SetActive(false);
+
+        DialogueManager.instance.conversationEnded -= OnClientIntroEnded;
+        DialogueManager.instance.conversationEnded += NextClient;
+
+        bool success = GetClientSuccess();
+
+        if (CurrentClientIndex == 0) {
+            DialogueManager.StartConversation("Enby " + (success ? "Success" : "Fail"), gameObject.transform, gameObject.transform);
+        } else if (CurrentClientIndex == 1) {
+            DialogueManager.StartConversation("Robot " + (success ? "Success" : "Fail"), gameObject.transform, gameObject.transform);
+        } else if (CurrentClientIndex == 2) {
+            DialogueManager.StartConversation("Alien " + (success ? "Success" : "Fail"), gameObject.transform, gameObject.transform);
         }
     }
 
     public bool GetClientSuccess() {
         Dictionary<GameManager.PERSONALITY_TRAIT, int> SoundboardSettings = SoundboardManager.GetSettings();
+        Dictionary<GameManager.PHYSICAL_TRAIT, int> AvatarSettings = RobotAvatarManager.GetSettings();
 
         bool PersonalitySuccess = SoundboardSettings[CurrentClient.PrimaryPerTrait] == CurrentClient.PrimaryPerTraitPreferredValue;
-        bool PhysicalSuccess = DEBUG_PrimaryPhysicalTraitSetting == CurrentClient.PrimaryPhysTraitPreferredValue;
+        bool PhysicalSuccess = AvatarSettings[CurrentClient.PrimaryPhysTrait] == CurrentClient.PrimaryPhysTraitPreferredValue;
 
         return PersonalitySuccess && PhysicalSuccess;
     }
 
-    public void DEBUG_CheckSubmission() {
-        Debug.Log("Success: " + (GetClientSuccess() ? "true" : "false"));
+    public void OnClientIntroEnded(Transform t) {
+        SubmitButton.SetActive(true);
     }
-    public string GetCurrentClientName()
-    {
-        return CurrentClient.Name;
+
+    public void NextClient(Transform t) {
+        if (CurrentClientIndex >= 2) {
+            return;
+        }
+
+        ++CurrentClientIndex;
+        CurrentClient = Clients[CurrentClientIndex];
+
+        DialogueManager.instance.conversationEnded -= NextClient;
+        DialogueManager.instance.conversationEnded += OnClientIntroEnded;
+
+        if (CurrentClientIndex == 0) {
+            DialogueManager.StartConversation("Enby Convo", gameObject.transform, gameObject.transform);
+        } else if (CurrentClientIndex == 1) {
+            DialogueManager.StartConversation("Robot Convo", gameObject.transform, gameObject.transform);
+        } else if (CurrentClientIndex == 2) {
+            DialogueManager.StartConversation("Alien Convo", gameObject.transform, gameObject.transform);
+        } else {
+            SubmitButton.SetActive(false);
+        }
     }
 }

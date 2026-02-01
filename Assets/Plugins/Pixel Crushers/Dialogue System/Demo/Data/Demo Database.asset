@@ -42,112 +42,112 @@ MonoBehaviour:
     - title: Name
       value: Player
       type: 0
-      typeString: CustomFieldType_Text
+      typeString: 
     - title: Pictures
-      value: '[../../Art/Portraits/Player.png]'
+      value: '[]'
       type: 3
       typeString: CustomFieldType_Files
     - title: Description
-      value: The Player controls a soldier sent to intercept the evil space emperor's
-        launch codes to prevent him from attacking your planet.
+      value: 
       type: 0
       typeString: CustomFieldType_Text
     - title: IsPlayer
       value: True
       type: 2
       typeString: CustomFieldType_Boolean
-    portrait: {fileID: 2800000, guid: e63e2479a8b2dc54ea311a230ce6c979, type: 3}
+    portrait: {fileID: 0}
     spritePortrait: {fileID: 0}
     alternatePortraits: []
     spritePortraits: []
   - id: 2
     fields:
     - title: Name
-      value: Private Hart
+      value: Alien
       type: 0
-      typeString: CustomFieldType_Text
+      typeString: 
     - title: Pictures
-      value: '[../../Art/Portraits/Private Hart.png]'
+      value: '[]'
       type: 3
       typeString: CustomFieldType_Files
     - title: Description
-      value: Private Hart is a kind-hearted soldier who offers the quest to hack
-        the emperor's computer to get the launch codes.
+      value: 
       type: 0
       typeString: CustomFieldType_Text
     - title: IsPlayer
       value: False
       type: 2
       typeString: CustomFieldType_Boolean
-    portrait: {fileID: 2800000, guid: e63e2479a8b2dc54ea311a230ce6c979, type: 3}
+    portrait: {fileID: 0}
     spritePortrait: {fileID: 0}
     alternatePortraits: []
     spritePortraits: []
   - id: 3
     fields:
     - title: Name
-      value: Sergeant Graves
+      value: Enby
       type: 0
       typeString: 
-    - title: Pictures
-      value: '[../../Art/Portraits/Sergeant Graves.png]'
-      type: 3
-      typeString: 
-    - title: Description
-      value: Sergeant Graves is a warlike soldier who offers the quest to hold back
-        enemy forces.
-      type: 0
-      typeString: 
-    - title: IsPlayer
-      value: False
-      type: 2
-      typeString: 
-    portrait: {fileID: 2800000, guid: e63e2479a8b2dc54ea311a230ce6c979, type: 3}
-    spritePortrait: {fileID: 0}
-    alternatePortraits: []
-    spritePortraits: []
-  - id: 4
-    fields:
-    - title: Name
-      value: Terminal
-      type: 0
-      typeString: CustomFieldType_Text
     - title: Pictures
       value: '[]'
       type: 3
       typeString: CustomFieldType_Files
     - title: Description
-      value: The Terminal is a computer interface through which the player can get
-        the launch codes.
+      value: 
       type: 0
       typeString: CustomFieldType_Text
     - title: IsPlayer
       value: False
       type: 2
       typeString: CustomFieldType_Boolean
-    portrait: {fileID: 2800000, guid: a491fca6456b0204080efb8fb6caa853, type: 3}
+    portrait: {fileID: 0}
+    spritePortrait: {fileID: 0}
+    alternatePortraits: []
+    spritePortraits: []
+  - id: 4
+    fields:
+    - title: Name
+      value: Robot
+      type: 0
+      typeString: 
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: IsPlayer
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    portrait: {fileID: 0}
     spritePortrait: {fileID: 0}
     alternatePortraits: []
     spritePortraits: []
   - id: 5
     fields:
     - title: Name
-      value: Dead Enemy
+      value: Narrator
       type: 0
       typeString: 
     - title: Pictures
       value: '[]'
       type: 3
-      typeString: 
+      typeString: CustomFieldType_Files
     - title: Description
-      value: The evil emperor's guards. They have a note with the terminal password.
+      value: 
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: IsPlayer
       value: False
       type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Display Name
+      value: 
+      type: 0
       typeString: 
-    portrait: {fileID: 2800000, guid: 3e54ad1935c5efc4db4454fafe3d8ae5, type: 3}
+    portrait: {fileID: 0}
     spritePortrait: {fileID: 0}
     alternatePortraits: []
     spritePortraits: []
@@ -2943,11 +2943,11 @@ MonoBehaviour:
     canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 1
   syncInfo:
-    syncActors: 0
+    syncActors: 1
     syncItems: 0
     syncLocations: 0
     syncVariables: 0
-    syncActorsDatabase: {fileID: 0}
+    syncActorsDatabase: {fileID: 11400000, guid: 0b5a11bdccd87354497380f0dd53e652, type: 2}
     syncItemsDatabase: {fileID: 0}
     syncLocationsDatabase: {fileID: 0}
     syncVariablesDatabase: {fileID: 0}

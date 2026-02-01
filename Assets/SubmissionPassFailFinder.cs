@@ -23,39 +23,39 @@ public class SubmissionPassFailFinder : MonoBehaviour
     public DialogueSystemTrigger RobotFail;
     public void PassOrFail()
     {
-        if (gameManager.GetCurrentClientName() == "Alien")
-        {
-            if (gameManager.GetClientSuccess() == true)
-            {
-                AlienPass.OnUse();
-            }
-            else
-            {
-                AlienFail.OnUse();
-            }
-        }
-        else if (gameManager.GetCurrentClientName() == "Enby")
-        {
-            if (gameManager.GetClientSuccess() == true)
-            {
-                EnbyPass.OnUse();
-            }
-            else
-            {
-                EnbyFail.OnUse();
-            }
-        }
-        else if (gameManager.GetCurrentClientName() == "Robot")
-        {
-            if (gameManager.GetClientSuccess() == true)
-            {
-                RobotPass.OnUse();
-            }
-            else
-            {
-                RobotFail.OnUse();
-            }
-        }
+//        if (gameManager.GetCurrentClientName() == "Alien")
+//        {
+//            if (gameManager.GetClientSuccess() == true)
+//            {
+//                AlienPass.OnUse();
+//            }
+//            else
+//            {
+//                AlienFail.OnUse();
+//            }
+//        }
+//        else if (gameManager.GetCurrentClientName() == "Enby")
+//        {
+//            if (gameManager.GetClientSuccess() == true)
+//            {
+//                EnbyPass.OnUse();
+//            }
+//            else
+//            {
+//                EnbyFail.OnUse();
+//            }
+//        }
+//        else if (gameManager.GetCurrentClientName() == "Robot")
+//        {
+//            if (gameManager.GetClientSuccess() == true)
+//            {
+//                RobotPass.OnUse();
+//            }
+//            else
+//            {
+//                RobotFail.OnUse();
+//            }
+//        }
     }
 
 

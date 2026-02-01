@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class Soundboard : MonoBehaviour
 {
@@ -24,8 +25,8 @@ public class Soundboard : MonoBehaviour
             return Setting;
         }
 
-        public void Init(GameManager.PERSONALITY_TRAIT trait) {
-            Slider.onValueChanged.AddListener(delegate {HandleSettingUpdate();});
+        public void Init(GameManager.PERSONALITY_TRAIT trait, UnityEvent SettingChangedEvent) {
+            Slider.onValueChanged.AddListener(delegate {HandleSettingUpdate(); SettingChangedEvent.Invoke();});
         }
 
         private void HandleSettingUpdate() {
@@ -42,10 +43,12 @@ public class Soundboard : MonoBehaviour
     [SerializeField]
     private PersonalityTrait Demeanor = new PersonalityTrait();
 
+    public UnityEvent PersonalityChanged;
+
     public void Awake() {
-        Intimacy.Init(GameManager.PERSONALITY_TRAIT.Intimacy);
-        Social.Init(GameManager.PERSONALITY_TRAIT.Social);
-        Demeanor.Init(GameManager.PERSONALITY_TRAIT.Demeanor);
+        Intimacy.Init(GameManager.PERSONALITY_TRAIT.Intimacy, PersonalityChanged);
+        Social.Init(GameManager.PERSONALITY_TRAIT.Social, PersonalityChanged);
+        Demeanor.Init(GameManager.PERSONALITY_TRAIT.Demeanor, PersonalityChanged);
     }
 
     public Dictionary<GameManager.PERSONALITY_TRAIT, int> GetSettings() {

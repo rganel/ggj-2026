@@ -4590,7 +4590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Clients:
-  - Name: Alien
+  - Name: Enby
     PrimaryPerTrait: 1
     PrimaryPerTraitPreferredValue: 2
     SecondaryPerTrait: 0
@@ -4603,7 +4603,7 @@ MonoBehaviour:
     SecondaryPhysTraitPreferredValue: 0
     TertiaryPhysTrait: 0
     TertiaryPhysTraitPreferredValue: 0
-  - Name: Enby
+  - Name: Robot
     PrimaryPerTrait: 0
     PrimaryPerTraitPreferredValue: 2
     SecondaryPerTrait: 2
@@ -4616,7 +4616,7 @@ MonoBehaviour:
     SecondaryPhysTraitPreferredValue: 1
     TertiaryPhysTrait: 1
     TertiaryPhysTraitPreferredValue: 0
-  - Name: Robot
+  - Name: Alien
     PrimaryPerTrait: 2
     PrimaryPerTraitPreferredValue: 1
     SecondaryPerTrait: 1
@@ -4632,7 +4632,7 @@ MonoBehaviour:
   SoundboardManager: {fileID: 302573737}
   RobotAvatarManager: {fileID: 2040806605}
   SubmitButton: {fileID: 1397966541}
-  DEBUG_CurrentClient: -1
+  CurrentClientIndex: -1
 --- !u!4 &1883642003
 Transform:
   m_ObjectHideFlags: 0

@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
     [System.Serializable]
     private class Client {
         [SerializeField]
+        public string Name;
+
+        [SerializeField]
         public PERSONALITY_TRAIT PrimaryPerTrait;
 
         [SerializeField]
@@ -87,5 +90,9 @@ public class GameManager : MonoBehaviour
 
     public void DEBUG_CheckSubmission() {
         Debug.Log("Success: " + (GetClientSuccess() ? "true" : "false"));
+    }
+    public string GetCurrentClientName()
+    {
+        return CurrentClient.Name;
     }
 }

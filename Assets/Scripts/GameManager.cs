@@ -76,6 +76,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private int CurrentClientIndex = -1;
 
+    [SerializeField]
+    private GameObject SendToDialogueMgr;
+
     public void Awake() {
         NextClient(null);
     }
@@ -89,11 +92,11 @@ public class GameManager : MonoBehaviour
         bool success = GetClientSuccess();
 
         if (CurrentClientIndex == 0) {
-            DialogueManager.StartConversation("Enby " + (success ? "Success" : "Fail"), gameObject.transform, gameObject.transform);
+            DialogueManager.StartConversation("Enby " + (success ? "Success" : "Fail"), null, null);
         } else if (CurrentClientIndex == 1) {
-            DialogueManager.StartConversation("Robot " + (success ? "Success" : "Fail"), gameObject.transform, gameObject.transform);
+            DialogueManager.StartConversation("Robot " + (success ? "Success" : "Fail"), null, null);
         } else if (CurrentClientIndex == 2) {
-            DialogueManager.StartConversation("Alien " + (success ? "Success" : "Fail"), gameObject.transform, gameObject.transform);
+            DialogueManager.StartConversation("Alien " + (success ? "Success" : "Fail"), null, null);
         }
     }
 
@@ -126,11 +129,11 @@ public class GameManager : MonoBehaviour
         DialogueManager.instance.conversationEnded += OnClientIntroEnded;
 
         if (CurrentClientIndex == 0) {
-            DialogueManager.StartConversation("Enby Convo", gameObject.transform, gameObject.transform);
+            DialogueManager.StartConversation("Enby Convo", null, null);
         } else if (CurrentClientIndex == 1) {
-            DialogueManager.StartConversation("Robot Convo", gameObject.transform, gameObject.transform);
+            DialogueManager.StartConversation("Robot Convo", null, null);
         } else if (CurrentClientIndex == 2) {
-            DialogueManager.StartConversation("Alien Convo", gameObject.transform, gameObject.transform);
+            DialogueManager.StartConversation("Alien Convo", null, null);
         } else {
             SubmitButton.SetActive(false);
         }

@@ -29,6 +29,11 @@ public class SoundboardManager : MonoBehaviour
             Slider.onValueChanged.AddListener(delegate {HandleSettingUpdate(); SettingChangedEvent.Invoke();});
         }
 
+        public void Reset() {
+            Setting = 0;
+            Slider.value = 0;
+        }
+
         private void HandleSettingUpdate() {
             Setting = (int)Slider.value;
         }
@@ -49,6 +54,12 @@ public class SoundboardManager : MonoBehaviour
         Intimacy.Init(GameManager.PERSONALITY_TRAIT.Intimacy, PersonalityChanged);
         Social.Init(GameManager.PERSONALITY_TRAIT.Social, PersonalityChanged);
         Demeanor.Init(GameManager.PERSONALITY_TRAIT.Demeanor, PersonalityChanged);
+    }
+
+    public void Reset() {
+        Intimacy.Reset();
+        Social.Reset();
+        Demeanor.Reset();
     }
 
     public Dictionary<GameManager.PERSONALITY_TRAIT, int> GetSettings() {

@@ -12,7 +12,7 @@ public class RobotAvatarManager : MonoBehaviour
         private GameManager.PHYSICAL_TRAIT Trait;
 
         [SerializeField]
-        private int Setting;
+        public int Setting;
 
         public PhysicalTrait() {
             Setting = 0;
@@ -51,6 +51,16 @@ public class RobotAvatarManager : MonoBehaviour
         };
     }
 
+    public void Reset() {
+        Appearance.Setting = 0;
+        Style.Setting = 0;
+        Height.Setting = 0;
+        CurrentSprite = 0;
+        CurrentStyle = 0;
+        CurrentBody = 0;
+        RobotImage.sprite = Sprites[CurrentSprite];
+    }
+
     public void NextBodyType() {
         CurrentBody++;
         if (CurrentBody > 2) {
@@ -60,6 +70,11 @@ public class RobotAvatarManager : MonoBehaviour
         CurrentSprite = CurrentStyle + (CurrentBody * 3);
 
         RobotImage.sprite = Sprites[CurrentSprite];
+
+        Appearance.Setting++;
+        if (Appearance.Setting > 2) {
+            Appearance.Setting = 0;
+        }
     }
 
     public void NextStyle() {
@@ -71,12 +86,22 @@ public class RobotAvatarManager : MonoBehaviour
         CurrentSprite = CurrentStyle + (CurrentBody * 3);
 
         RobotImage.sprite = Sprites[CurrentSprite];
+
+        Style.Setting++;
+        if (Style.Setting > 2) {
+            Style.Setting = 0;
+        }
     }
 
     public void NextHeight() {
         // TODO
 
         RobotImage.sprite = Sprites[CurrentSprite];
+
+        Height.Setting++;
+        if (Height.Setting > 2) {
+            Height.Setting = 0;
+        }
     }
 
     public void LastBodyType() {
@@ -88,6 +113,11 @@ public class RobotAvatarManager : MonoBehaviour
         CurrentSprite = CurrentStyle + (CurrentBody * 3);
 
         RobotImage.sprite = Sprites[CurrentSprite];
+
+        Appearance.Setting--;
+        if (Appearance.Setting < 0) {
+            Appearance.Setting = 2;
+        }
     }
 
     public void LastStyle() {
@@ -99,11 +129,21 @@ public class RobotAvatarManager : MonoBehaviour
         CurrentSprite = CurrentStyle + (CurrentBody * 3);
 
         RobotImage.sprite = Sprites[CurrentSprite];
+
+        Style.Setting--;
+        if (Style.Setting < 0) {
+            Style.Setting = 2;
+        }
     }
 
     public void LastHeight() {
         // TODO
 
         RobotImage.sprite = Sprites[CurrentSprite];
+
+        Height.Setting--;
+        if (Height.Setting < 0) {
+            Height.Setting = 2;
+        }
     }
 }

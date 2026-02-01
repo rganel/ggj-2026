@@ -112,8 +112,11 @@ public class GameManager : MonoBehaviour
     }
 
     public void NextClient(Transform t) {
+        SoundboardManager.Reset();
+        RobotAvatarManager.Reset();
+
         if (CurrentClientIndex >= 2) {
-            return;
+            Application.Quit();
         }
 
         ++CurrentClientIndex;

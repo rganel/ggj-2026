@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
     private Client[] Clients;
 
     [SerializeField]
-    private Soundboard Soundboard;
+    private SoundboardManager SoundboardManager;
 
 //    [SerializeField]
     private Client CurrentClient;
@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
     }
 
     public bool GetClientSuccess() {
-        Dictionary<GameManager.PERSONALITY_TRAIT, int> SoundboardSettings = Soundboard.GetSettings();
+        Dictionary<GameManager.PERSONALITY_TRAIT, int> SoundboardSettings = SoundboardManager.GetSettings();
 
         bool PersonalitySuccess = SoundboardSettings[CurrentClient.PrimaryPerTrait] == CurrentClient.PrimaryPerTraitPreferredValue;
         bool PhysicalSuccess = DEBUG_PrimaryPhysicalTraitSetting == CurrentClient.PrimaryPhysTraitPreferredValue;

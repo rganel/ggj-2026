@@ -43,6 +43,10 @@ public class SoundManager : MonoBehaviour
         PlayEffect(EFFECT_TYPE.PersonalityChange);
     }
 
+    public void PlayPhysicalEffect() {
+        PlayEffect(EFFECT_TYPE.PhysicalChange);
+    }
+
     public void PlayEffect(EFFECT_TYPE EffectType) {
         SFXAudioSource.clip = SFXClips[(int)EffectType].GetClip();
         SFXAudioSource.Play();

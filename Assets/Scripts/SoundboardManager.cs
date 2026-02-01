@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-public class Soundboard : MonoBehaviour
+public class SoundboardManager : MonoBehaviour
 {
     [System.Serializable]
     private class PersonalityTrait {

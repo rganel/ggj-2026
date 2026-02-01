@@ -2,58 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d05ca259-250a-4ad6-b764-955b17168f19" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/DX_Client_A_01.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/DX_Client_A_01.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/DX_Client_A_02.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/DX_Client_A_02.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/DX_Client_A_03.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/DX_Client_A_03.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/DX_Client_A_04.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/DX_Client_A_04.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/DX_Client_A_05.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/DX_Client_A_05.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/DX_Client_A_06.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/DX_Client_A_06.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/DX_Client_A_07.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/DX_Client_A_07.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/DX_Client_B_01.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/DX_Client_B_01.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/DX_Client_B_02.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/DX_Client_B_02.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/DX_Client_B_03.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/DX_Client_B_03.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/DX_Client_B_04.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/DX_Client_B_04.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/DX_Client_B_05.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/DX_Client_B_05.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/DX_Client_B_06.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/DX_Client_B_06.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/DX_Client_B_07.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/DX_Client_B_07.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/DX_Client_C_01.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/DX_Client_C_01.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/DX_Client_C_02.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/DX_Client_C_02.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/DX_Client_C_03.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/DX_Client_C_03.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/DX_Client_C_04.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/DX_Client_C_04.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/DX_Client_C_05.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/DX_Client_C_05.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/DX_Client_C_06.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/DX_Client_C_06.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Change_Appearance_01.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Change_Appearance_01.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Change_Appearance_02.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Change_Appearance_02.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Change_Appearance_03.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Change_Appearance_03.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Change_Appearance_04.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Change_Appearance_04.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Change_Personality_01.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Change_Personality_01.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Change_Personality_02.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Change_Personality_02.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Change_Personality_03.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Change_Personality_03.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Change_Personality_04.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Change_Personality_04.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Change_Personality_05.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Change_Personality_05.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Change_Personality_06.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Change_Personality_06.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Click_01.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Click_01.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Click_02.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Click_02.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Click_03.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Click_03.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Click_04.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Click_04.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Click_05.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Click_05.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Click_06.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Click_06.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Client_Happy_01.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Client_Happy_01.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Client_Happy_02.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Client_Happy_02.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Client_Happy_03.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Client_Happy_03.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Client_Happy_04.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Client_Happy_04.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Client_Happy_05.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Client_Happy_05.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Client_Happy_06.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Client_Happy_06.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Client_Upset_01.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Client_Upset_01.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Client_Upset_02.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Client_Upset_02.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Client_Upset_03.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Client_Upset_03.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Client_Upset_04.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Client_Upset_04.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Submit_01.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Submit_01.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Submit_02.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Submit_02.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Submit_03.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Submit_03.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/UI_Submit_04.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/UI_Submit_04.wav.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Plugins/Pixel Crushers/Dialogue System/Demo/Data/Demo Database.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Pixel Crushers/Dialogue System/Demo/Data/Demo Database.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SoundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SoundManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Soundboard.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Soundboard.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
     </list>
@@ -137,6 +88,7 @@
       <workItem from="1769894200473" duration="2000" />
       <workItem from="1769913320369" duration="3000" />
       <workItem from="1769972141558" duration="3000" />
+      <workItem from="1769973886114" duration="17000" />
     </task>
     <servers />
   </component>

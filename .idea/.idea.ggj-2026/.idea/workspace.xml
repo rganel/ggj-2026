@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d05ca259-250a-4ad6-b764-955b17168f19" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Pixel Crushers/Dialogue System/Demo/Data/Demo Database.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Pixel Crushers/Dialogue System/Demo/Data/Demo Database.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Soundboard.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Soundboard.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Dialogue UI.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Dialogue UI.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Pixel Crushers/Dialogue System/Scripts/UI/Standard/Dialogue/StandardUISubtitlePanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Pixel Crushers/Dialogue System/Scripts/UI/Standard/Dialogue/StandardUISubtitlePanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Updated.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Updated.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

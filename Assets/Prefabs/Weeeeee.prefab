@@ -884,95 +884,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &2098787192415080311
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6154440345613770017}
-  - component: {fileID: 7027022528707061106}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6154440345613770017
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2098787192415080311}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -369.63806, y: -229.58945, z: -2.4683855}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2758856698427770123}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7027022528707061106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2098787192415080311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bf742a8d2d31427f8c2e422bede515c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Clients:
-  - Name: Enby
-    PrimaryPerTrait: 1
-    PrimaryPerTraitPreferredValue: 2
-    SecondaryPerTrait: 0
-    SecondaryPerTraitPreferredValue: 1
-    TertiaryPerTrait: 2
-    TertiaryPerTraitPreferredValue: 0
-    PrimaryPhysTrait: 1
-    PrimaryPhysTraitPreferredValue: 2
-    SecondaryPhysTrait: 2
-    SecondaryPhysTraitPreferredValue: 0
-    TertiaryPhysTrait: 0
-    TertiaryPhysTraitPreferredValue: 0
-  - Name: Robot
-    PrimaryPerTrait: 0
-    PrimaryPerTraitPreferredValue: 2
-    SecondaryPerTrait: 2
-    SecondaryPerTraitPreferredValue: 2
-    TertiaryPerTrait: 1
-    TertiaryPerTraitPreferredValue: 1
-    PrimaryPhysTrait: 2
-    PrimaryPhysTraitPreferredValue: 1
-    SecondaryPhysTrait: 0
-    SecondaryPhysTraitPreferredValue: 1
-    TertiaryPhysTrait: 1
-    TertiaryPhysTraitPreferredValue: 0
-  - Name: Alien
-    PrimaryPerTrait: 2
-    PrimaryPerTraitPreferredValue: 1
-    SecondaryPerTrait: 1
-    SecondaryPerTraitPreferredValue: 0
-    TertiaryPerTrait: 0
-    TertiaryPerTraitPreferredValue: 0
-    PrimaryPhysTrait: 0
-    PrimaryPhysTraitPreferredValue: 2
-    SecondaryPhysTrait: 1
-    SecondaryPhysTraitPreferredValue: 1
-    TertiaryPhysTrait: 2
-    TertiaryPhysTraitPreferredValue: 2
-  SoundboardManager: {fileID: 259222708509616290}
-  RobotAvatarManager: {fileID: 6178091522628378489}
-  SubmitButton: {fileID: 1285650697930535538}
-  CurrentClientIndex: -1
-  SendToDialogueMgr: {fileID: 7444132905798409173}
 --- !u!1 &2146192680768247260
 GameObject:
   m_ObjectHideFlags: 0
@@ -2011,6 +1922,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d9b5b5de1786d4458a5dfa1e4887ce8c, type: 3}
   - {fileID: 21300000, guid: f66b414ff0d2149f988ac7c7ba4de268, type: 3}
   RobotImage: {fileID: 1299739937628161612}
+  RobotPreviewRoot: {fileID: 0}
 --- !u!1 &4493028942582544708
 GameObject:
   m_ObjectHideFlags: 0
@@ -2357,6 +2269,7 @@ MonoBehaviour:
     Trait: 0
     Setting: 0
     Slider: {fileID: 7381971134055781815}
+  SoundboardRoot: {fileID: 0}
   PersonalityChanged:
     m_PersistentCalls:
       m_Calls:
@@ -5761,3 +5674,92 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 22496680, guid: 2287a7182ecd54a68ae900024d78292f, type: 3}
   m_PrefabInstance: {fileID: 7444132905798378531}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8202018774973280270
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2758856698427770123}
+    m_Modifications:
+    - target: {fileID: 1177571855072859516, guid: 0d6ef021f7f4c441ca26225cce1c8602, type: 3}
+      propertyPath: SubmitButton
+      value: 
+      objectReference: {fileID: 1285650697930535538}
+    - target: {fileID: 1177571855072859516, guid: 0d6ef021f7f4c441ca26225cce1c8602, type: 3}
+      propertyPath: SendToDialogueMgr
+      value: 
+      objectReference: {fileID: 7444132905798409173}
+    - target: {fileID: 1177571855072859516, guid: 0d6ef021f7f4c441ca26225cce1c8602, type: 3}
+      propertyPath: SoundboardManager
+      value: 
+      objectReference: {fileID: 259222708509616290}
+    - target: {fileID: 1177571855072859516, guid: 0d6ef021f7f4c441ca26225cce1c8602, type: 3}
+      propertyPath: RobotAvatarManager
+      value: 
+      objectReference: {fileID: 6178091522628378489}
+    - target: {fileID: 2646879064936803631, guid: 0d6ef021f7f4c441ca26225cce1c8602, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -369.63806
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646879064936803631, guid: 0d6ef021f7f4c441ca26225cce1c8602, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -229.58945
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646879064936803631, guid: 0d6ef021f7f4c441ca26225cce1c8602, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.4683855
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646879064936803631, guid: 0d6ef021f7f4c441ca26225cce1c8602, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646879064936803631, guid: 0d6ef021f7f4c441ca26225cce1c8602, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646879064936803631, guid: 0d6ef021f7f4c441ca26225cce1c8602, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646879064936803631, guid: 0d6ef021f7f4c441ca26225cce1c8602, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646879064936803631, guid: 0d6ef021f7f4c441ca26225cce1c8602, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646879064936803631, guid: 0d6ef021f7f4c441ca26225cce1c8602, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646879064936803631, guid: 0d6ef021f7f4c441ca26225cce1c8602, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7850635387085504377, guid: 0d6ef021f7f4c441ca26225cce1c8602, type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0d6ef021f7f4c441ca26225cce1c8602, type: 3}
+--- !u!4 &6154440345613770017 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2646879064936803631, guid: 0d6ef021f7f4c441ca26225cce1c8602, type: 3}
+  m_PrefabInstance: {fileID: 8202018774973280270}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7027022528707061106 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1177571855072859516, guid: 0d6ef021f7f4c441ca26225cce1c8602, type: 3}
+  m_PrefabInstance: {fileID: 8202018774973280270}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bf742a8d2d31427f8c2e422bede515c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -3,23 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using PixelCrushers.DialogueSystem;
 
 public class RobotAvatarManager : MonoBehaviour
 {
+    public enum PHYSICAL_TRAIT {
+        Appearance,
+        Height,
+        Style
+    };
+
     [System.Serializable]
     private class PhysicalTrait {
         [SerializeField]
-        private GameManager.PHYSICAL_TRAIT Trait;
+        private PHYSICAL_TRAIT Trait;
 
         [SerializeField]
-        public int Setting;
+        private int Setting;
 
-        public PhysicalTrait() {
-            Setting = 0;
-        }
+        [SerializeField]
+        [VariablePopup]
+        private string DialogueVariableName;
 
         public int GetSetting() {
             return Setting;
+        }
+
+        public void SetSetting(int Setting) {
+            this.Setting = Setting;
+            DialogueLua.SetVariable(DialogueVariableName, Setting);
+
+            GameManager.PhysicalTraitChanged.Invoke();
         }
     }
 
@@ -38,27 +52,36 @@ public class RobotAvatarManager : MonoBehaviour
     [SerializeField]
     private Image RobotImage;
 
+    [SerializeField]
+    private GameObject RobotPreviewRoot;
+
     private int CurrentBody;
     private int CurrentStyle;
     private int CurrentSprite;
 
-    public Dictionary<GameManager.PHYSICAL_TRAIT, int> GetSettings() {
-        return new Dictionary<GameManager.PHYSICAL_TRAIT, int>()
+    public Dictionary<PHYSICAL_TRAIT, int> GetSettings() {
+        return new Dictionary<PHYSICAL_TRAIT, int>()
         {
-            { GameManager.PHYSICAL_TRAIT.Appearance, Appearance.GetSetting() },
-            { GameManager.PHYSICAL_TRAIT.Height, Height.GetSetting() },
-            { GameManager.PHYSICAL_TRAIT.Style, Style.GetSetting() }
+            { PHYSICAL_TRAIT.Appearance, Appearance.GetSetting() },
+            { PHYSICAL_TRAIT.Height, Height.GetSetting() },
+            { PHYSICAL_TRAIT.Style, Style.GetSetting() }
         };
     }
 
     public void Reset() {
-        Appearance.Setting = 0;
-        Style.Setting = 0;
-        Height.Setting = 0;
+        Appearance.SetSetting(0);
+        Style.SetSetting(0);
+        Height.SetSetting(0);
         CurrentSprite = 0;
         CurrentStyle = 0;
         CurrentBody = 0;
         RobotImage.sprite = Sprites[CurrentSprite];
+
+        RobotPreviewRoot.SetActive(false);
+    }
+
+    public void Enable() {
+        RobotPreviewRoot.SetActive(true);
     }
 
     public void NextBodyType() {
@@ -71,10 +94,7 @@ public class RobotAvatarManager : MonoBehaviour
 
         RobotImage.sprite = Sprites[CurrentSprite];
 
-        Appearance.Setting++;
-        if (Appearance.Setting > 2) {
-            Appearance.Setting = 0;
-        }
+        UpdateSetting(Appearance, 1);
     }
 
     public void NextStyle() {
@@ -87,21 +107,14 @@ public class RobotAvatarManager : MonoBehaviour
 
         RobotImage.sprite = Sprites[CurrentSprite];
 
-        Style.Setting++;
-        if (Style.Setting > 2) {
-            Style.Setting = 0;
-        }
+        UpdateSetting(Style, 1);
     }
 
     public void NextHeight() {
-        // TODO
+        UpdateSetting(Height, 1);
 
-        RobotImage.sprite = Sprites[CurrentSprite];
-
-        Height.Setting++;
-        if (Height.Setting > 2) {
-            Height.Setting = 0;
-        }
+        float scaleFactor = GetHeightScaleFactor();
+        RobotImage.transform.localScale = new Vector3(scaleFactor, scaleFactor, 1.0f);
     }
 
     public void LastBodyType() {
@@ -114,10 +127,7 @@ public class RobotAvatarManager : MonoBehaviour
 
         RobotImage.sprite = Sprites[CurrentSprite];
 
-        Appearance.Setting--;
-        if (Appearance.Setting < 0) {
-            Appearance.Setting = 2;
-        }
+        UpdateSetting(Appearance, -1);
     }
 
     public void LastStyle() {
@@ -130,20 +140,28 @@ public class RobotAvatarManager : MonoBehaviour
 
         RobotImage.sprite = Sprites[CurrentSprite];
 
-        Style.Setting--;
-        if (Style.Setting < 0) {
-            Style.Setting = 2;
-        }
+        UpdateSetting(Style, -1);
     }
 
     public void LastHeight() {
-        // TODO
+        UpdateSetting(Height, -1);
 
-        RobotImage.sprite = Sprites[CurrentSprite];
+        float scaleFactor = GetHeightScaleFactor();
+        RobotImage.transform.localScale = new Vector3(scaleFactor, scaleFactor, 1.0f);
+    }
 
-        Height.Setting--;
-        if (Height.Setting < 0) {
-            Height.Setting = 2;
+    private void UpdateSetting(PhysicalTrait Trait, int Delta) {
+        int NewSetting = Trait.GetSetting() + Delta;
+        if (NewSetting > 2) {
+            NewSetting = 0;
+        } else if (NewSetting < 0) {
+            NewSetting = 2;
         }
+
+        Trait.SetSetting(NewSetting);
+    }
+
+    private float GetHeightScaleFactor() {
+        return 0.8f + (Height.GetSetting() * 0.1f);
     }
 }

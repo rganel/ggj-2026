@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d05ca259-250a-4ad6-b764-955b17168f19" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Dialogue UI.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Dialogue UI.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Pixel Crushers/Dialogue System/Scripts/UI/Standard/Dialogue/StandardUISubtitlePanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Pixel Crushers/Dialogue System/Scripts/UI/Standard/Dialogue/StandardUISubtitlePanel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Updated.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Updated.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +38,14 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Game.app/Contents/MacOS/ggj-2026" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Game.app/Contents/MacOS" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="/Applications/Unity/Unity.app/Contents/MacOS/Unity" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath $PROJECT_DIR$ -debugCodeOptimization" />
@@ -88,6 +96,7 @@
       <workItem from="1769913320369" duration="3000" />
       <workItem from="1769972141558" duration="3000" />
       <workItem from="1769973886114" duration="17000" />
+      <workItem from="1769987156279" duration="1917000" />
     </task>
     <servers />
   </component>

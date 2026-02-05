@@ -3,16 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using PixelCrushers.DialogueSystem;
 
 public class SoundboardManager : MonoBehaviour
 {
+    public enum PERSONALITY_TRAIT {
+        Intimacy,
+        Social,
+        Demeanor
+    };
+
     [System.Serializable]
     private class PersonalityTrait {
         [SerializeField]
-        private GameManager.PERSONALITY_TRAIT Trait;
+        private PERSONALITY_TRAIT Trait;
 
         [SerializeField]
         private int Setting;
+
+        [SerializeField]
+        [VariablePopup]
+        private string DialogueVariableName;
 
         [SerializeField]
         private Slider Slider;
@@ -25,8 +36,8 @@ public class SoundboardManager : MonoBehaviour
             return Setting;
         }
 
-        public void Init(GameManager.PERSONALITY_TRAIT trait, UnityEvent SettingChangedEvent) {
-            Slider.onValueChanged.AddListener(delegate {HandleSettingUpdate(); SettingChangedEvent.Invoke();});
+        public void Init(PERSONALITY_TRAIT trait) {
+            Slider.onValueChanged.AddListener(delegate {HandleSettingUpdate();});
         }
 
         public void Reset() {
@@ -36,6 +47,9 @@ public class SoundboardManager : MonoBehaviour
 
         private void HandleSettingUpdate() {
             Setting = (int)Slider.value;
+            DialogueLua.SetVariable(DialogueVariableName, Setting);
+
+            GameManager.PersonalityTraitChanged.Invoke();
         }
     }
 
@@ -48,26 +62,33 @@ public class SoundboardManager : MonoBehaviour
     [SerializeField]
     private PersonalityTrait Demeanor = new PersonalityTrait();
 
-    public UnityEvent PersonalityChanged;
+    [SerializeField]
+    private GameObject SoundboardRoot;
 
     public void Awake() {
-        Intimacy.Init(GameManager.PERSONALITY_TRAIT.Intimacy, PersonalityChanged);
-        Social.Init(GameManager.PERSONALITY_TRAIT.Social, PersonalityChanged);
-        Demeanor.Init(GameManager.PERSONALITY_TRAIT.Demeanor, PersonalityChanged);
+        Intimacy.Init(PERSONALITY_TRAIT.Intimacy);
+        Social.Init(PERSONALITY_TRAIT.Social);
+        Demeanor.Init(PERSONALITY_TRAIT.Demeanor);
     }
 
     public void Reset() {
         Intimacy.Reset();
         Social.Reset();
         Demeanor.Reset();
+
+        SoundboardRoot.SetActive(false);
     }
 
-    public Dictionary<GameManager.PERSONALITY_TRAIT, int> GetSettings() {
-        return new Dictionary<GameManager.PERSONALITY_TRAIT, int>()
+    public Dictionary<PERSONALITY_TRAIT, int> GetSettings() {
+        return new Dictionary<PERSONALITY_TRAIT, int>()
         {
-            { GameManager.PERSONALITY_TRAIT.Intimacy, Intimacy.GetSetting() },
-            { GameManager.PERSONALITY_TRAIT.Social, Social.GetSetting() },
-            { GameManager.PERSONALITY_TRAIT.Demeanor, Demeanor.GetSetting() }
+            { PERSONALITY_TRAIT.Intimacy, Intimacy.GetSetting() },
+            { PERSONALITY_TRAIT.Social, Social.GetSetting() },
+            { PERSONALITY_TRAIT.Demeanor, Demeanor.GetSetting() }
         };
+    }
+
+    public void Enable() {
+        SoundboardRoot.SetActive(true);
     }
 }

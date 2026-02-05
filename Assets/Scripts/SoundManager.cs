@@ -34,9 +34,12 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     private AudioSource SFXAudioSource;
 
-    void Awake() {
+    void Start() {
         MusicAudioSource.clip = BackgroundMusicClip;
         MusicAudioSource.Play();
+
+        GameManager.PhysicalTraitChanged.AddListener(PlayPhysicalEffect);
+        GameManager.PersonalityTraitChanged.AddListener(PlayPersonalityEffect);
     }
 
     public void PlayPersonalityEffect() {

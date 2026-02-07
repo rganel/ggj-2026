@@ -28,12 +28,20 @@ public class SoundboardManager : MonoBehaviour
         [SerializeField]
         private Slider Slider;
 
+        [SerializeField]
+        private GameObject SliderHandle;
+
         public PersonalityTrait() {
             Setting = 0;
         }
 
         public int GetSetting() {
             return Setting;
+        }
+
+        public void LockIn() {
+            Slider.interactable = false;
+            SliderHandle.SetActive(false);
         }
 
         public void Init(PERSONALITY_TRAIT trait) {
@@ -43,13 +51,13 @@ public class SoundboardManager : MonoBehaviour
         public void Reset() {
             Setting = 0;
             Slider.value = 0;
+            Slider.interactable = true;
+            SliderHandle.SetActive(true);
         }
 
         private void HandleSettingUpdate() {
             Setting = (int)Slider.value;
             DialogueLua.SetVariable(DialogueVariableName, Setting);
-
-            GameManager.PersonalityTraitChanged.Invoke();
         }
     }
 
@@ -69,6 +77,12 @@ public class SoundboardManager : MonoBehaviour
         Intimacy.Init(PERSONALITY_TRAIT.Intimacy);
         Social.Init(PERSONALITY_TRAIT.Social);
         Demeanor.Init(PERSONALITY_TRAIT.Demeanor);
+    }
+
+    public void LockIn() {
+        Intimacy.LockIn();
+        Social.LockIn();
+        Demeanor.LockIn();
     }
 
     public void Reset() {

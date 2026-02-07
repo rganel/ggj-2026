@@ -32,8 +32,6 @@ public class RobotAvatarManager : MonoBehaviour
         public void SetSetting(int Setting) {
             this.Setting = Setting;
             DialogueLua.SetVariable(DialogueVariableName, Setting);
-
-            GameManager.PhysicalTraitChanged.Invoke();
         }
     }
 
@@ -55,6 +53,12 @@ public class RobotAvatarManager : MonoBehaviour
     [SerializeField]
     private GameObject RobotPreviewRoot;
 
+    [SerializeField]
+    private Button[] ArrowButtons;
+
+    [SerializeField]
+    private Sprite LastUsedSprite;
+
     private int CurrentBody;
     private int CurrentStyle;
     private int CurrentSprite;
@@ -68,7 +72,13 @@ public class RobotAvatarManager : MonoBehaviour
         };
     }
 
+    public Sprite GetLastUsedSprite() {
+        return LastUsedSprite;
+    }
+
     public void Reset() {
+        LastUsedSprite = RobotImage.sprite;
+
         Appearance.SetSetting(0);
         Style.SetSetting(0);
         Height.SetSetting(0);
@@ -77,7 +87,20 @@ public class RobotAvatarManager : MonoBehaviour
         CurrentBody = 0;
         RobotImage.sprite = Sprites[CurrentSprite];
 
+        float scaleFactor = GetHeightScaleFactor();
+        RobotImage.transform.localScale = new Vector3(scaleFactor, scaleFactor, 1.0f);
+
+        foreach (Button ArrowButton in ArrowButtons) {
+            ArrowButton.gameObject.SetActive(true);
+        }
+
         RobotPreviewRoot.SetActive(false);
+    }
+
+    public void LockIn() {
+        foreach (Button ArrowButton in ArrowButtons) {
+            ArrowButton.gameObject.SetActive(false);
+        }
     }
 
     public void Enable() {

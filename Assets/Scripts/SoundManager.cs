@@ -16,7 +16,14 @@ public class SoundManager : MonoBehaviour
 
     public enum EFFECT_TYPE {
         PersonalityChange,
-        PhysicalChange
+        PhysicalChange,
+        ClientANeutral,
+        ClientBNeutral,
+        ClientCNeutral,
+        ClientHappy,
+        ClientUpset,
+        PlayerSubmit,
+        PlayerContinue
     };
 
     [SerializeField]
@@ -29,17 +36,11 @@ public class SoundManager : MonoBehaviour
     private ClipVariants[] SFXClips = new ClipVariants[2];
 
     [SerializeField]
-    private ClipVariants PhysicalChangeClips;
-
-    [SerializeField]
     private AudioSource SFXAudioSource;
 
     void Start() {
         MusicAudioSource.clip = BackgroundMusicClip;
         MusicAudioSource.Play();
-
-        GameManager.PhysicalTraitChanged.AddListener(PlayPhysicalEffect);
-        GameManager.PersonalityTraitChanged.AddListener(PlayPersonalityEffect);
     }
 
     public void PlayPersonalityEffect() {
@@ -48,6 +49,34 @@ public class SoundManager : MonoBehaviour
 
     public void PlayPhysicalEffect() {
         PlayEffect(EFFECT_TYPE.PhysicalChange);
+    }
+
+    public void PlayClientANeutralEffect() {
+        PlayEffect(EFFECT_TYPE.ClientANeutral);
+    }
+
+    public void PlayClientBNeutralEffect() {
+        PlayEffect(EFFECT_TYPE.ClientBNeutral);
+    }
+
+    public void PlayClientCNeutralEffect() {
+        PlayEffect(EFFECT_TYPE.ClientCNeutral);
+    }
+
+    public void PlayClientHappyEffect() {
+        PlayEffect(EFFECT_TYPE.ClientHappy);
+    }
+
+    public void PlayClientUpsetEffect() {
+        PlayEffect(EFFECT_TYPE.ClientUpset);
+    }
+
+    public void PlaySubmitEffect() {
+        PlayEffect(EFFECT_TYPE.PlayerSubmit);
+    }
+
+    public void PlayContinueEffect() {
+        PlayEffect(EFFECT_TYPE.PlayerContinue);
     }
 
     public void PlayEffect(EFFECT_TYPE EffectType) {

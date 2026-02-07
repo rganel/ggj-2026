@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using PixelCrushers.DialogueSystem;
 using UnityEngine.Events;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,28 +14,41 @@ public class GameManager : MonoBehaviour
     private RobotAvatarManager RobotAvatarManager;
 
     [SerializeField]
+    private SoundManager SoundManager;
+
+    [SerializeField]
     private GameObject Overlay;
 
-    public static UnityEvent PhysicalTraitChanged;
+    [SerializeField]
+    private TMP_Text CurrentMoneyText;
 
-    public static UnityEvent PersonalityTraitChanged;
+    private static SoundManager SoundManagerRef;
 
     public void Awake() {
-        PhysicalTraitChanged = new UnityEvent();
-        PersonalityTraitChanged = new UnityEvent();
+        SoundManagerRef = SoundManager;
+    }
+
+    public static void PlayClientSound(string Speaker) {
+        switch (Speaker) {
+            case "Enby": SoundManagerRef.PlayEffect(SoundManager.EFFECT_TYPE.ClientANeutral); break;
+            case "Robot": SoundManagerRef.PlayEffect(SoundManager.EFFECT_TYPE.ClientBNeutral); break;
+            case "Alien": SoundManagerRef.PlayEffect(SoundManager.EFFECT_TYPE.ClientCNeutral); break;
+        };
     }
 
     public void Update() {
         if (Overlay.activeInHierarchy && Input.anyKeyDown) {
             Overlay.SetActive(false);
 
-            DialogueManager.StartConversation("Enby Convo", null, null);
+            DialogueManager.StartConversation("Intro", null, null);
         }
     }
 
     public void Reset() {
         SoundboardManager.Reset();
         RobotAvatarManager.Reset();
+
+        DialogueManager.MasterDatabase.GetActor("Cassbot").spritePortrait = RobotAvatarManager.GetLastUsedSprite();
     }
 
     public void OnPersonalityAnswer() {
@@ -43,5 +57,9 @@ public class GameManager : MonoBehaviour
 
     public void OnPhysicalAnswer() {
         RobotAvatarManager.Enable();
+    }
+
+    public void OnMoneyUpdated() {
+        CurrentMoneyText.text = DialogueLua.GetVariable("Money").asInt.ToString();
     }
 }

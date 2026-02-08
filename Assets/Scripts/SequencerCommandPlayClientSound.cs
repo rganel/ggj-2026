@@ -14,9 +14,15 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands {
             string EntryTag = GetParameter(0);
             if (EntryTag != null && EntryTag.Contains("_"))
             {
-                GameManager.PlayClientSound(GetParameter(0).ToString().Split("_")[0]);
+                GameManager.PlayClientSound(EntryTag.ToString().Split("_")[0]);
+            } else if (EntryTag != null && EntryTag.Contains("Submit"))
+            {
+                GameManager.PlayClientSound("Submit");
             }
-
+            else if (EntryTag != null && EntryTag.Contains("Continue"))
+            {
+                GameManager.PlayClientSound("Continue");
+            }
 
             Stop();
         }

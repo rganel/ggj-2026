@@ -1,6 +1,7 @@
 // Copyright (c) Pixel Crushers. All rights reserved.
 
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace PixelCrushers.DialogueSystem
 {
@@ -13,6 +14,9 @@ namespace PixelCrushers.DialogueSystem
     [AddComponentMenu("")] // Use wrapper.
     public class StandardUIContinueButtonFastForward : MonoBehaviour
     {
+
+        [SerializeField]
+        private UnityEvent DidFastForward = new UnityEvent();
 
         [Tooltip("Dialogue UI that the continue button affects.")]
         public StandardDialogueUI dialogueUI;
@@ -61,6 +65,7 @@ namespace PixelCrushers.DialogueSystem
             if ((typewriterEffect != null) && typewriterEffect.isPlaying)
             {
                 typewriterEffect.Stop();
+                DidFastForward.Invoke();
             }
 #if USE_STM
             else if (superTextMesh != null && superTextMesh.reading)

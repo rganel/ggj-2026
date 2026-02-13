@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
-    <div id="unity-container" style="width=100% height=100%" class="unity-desktop">
-      <canvas id="unity-canvas" width=100% height=100% tabindex="-1"></canvas>
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas" width=100% aspect-ratio=1.78 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -95,7 +95,8 @@
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
         canvas.style.width = "100%";
-        canvas.style.height = "100%";
+        canvas.style.aspect-ratio = "1.78";
+        // canvas.style.height = "100%";
       }
 
       loadingBar.style.display = "block";
